@@ -1,0 +1,21 @@
+name: dijo
+base: core20
+version: '0.2.7'
+summary: dijo is a terminal based habit tracker.
+description: |
+  dijo is a habit tracker. It is curses-based, it runs in your terminal. dijo is scriptable, hook it up with external programs to track events without moving a finger. dijo is modal, much like a certain text editor.
+
+grade: stable
+confinement: strict
+
+parts:
+  dijo:
+    plugin: rust
+    source: .
+
+apps:
+  dijo:
+    command: bin/dijo
+    plugs:
+      - home
+
